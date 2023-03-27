@@ -121,16 +121,16 @@ namespace NoVanillaCitizens
                 }
 
                 var service = PrefabCollection<CitizenInfo>.GetPrefab(groupAnimals[i].m_buffer[0])?.m_class?.m_service;
-                var subCulture = PrefabCollection<CitizenInfo>.GetPrefab(groupAnimals[i].m_buffer[0])?.m_subCulture;
+                var subService = PrefabCollection<CitizenInfo>.GetPrefab(groupAnimals[i].m_buffer[0])?.m_class?.m_subService;
                 if (customAnimals.m_size == 0)
                 {
                     newGroupAnimals[i] = groupAnimals[i];
                     UnityEngine.Debug.LogWarning(
-                        $"No Vanilla Citizens: Vanilla animals will be used for service: {service}, subCulture: {subCulture}. No custom prefabs found!");
+                        $"No Vanilla Citizens: Vanilla animals will be used for service: {service}, subService: {subService}. No custom prefabs found!");
                     continue;
                 }
                 UnityEngine.Debug.Log(
-                $"No Vanilla Citizens: preventing vanilla animals from spawning for service: {service}, subCulture: {subCulture}");
+                $"No Vanilla Citizens: preventing vanilla animals from spawning for service: {service}, subService: {subService}");
                 newGroupAnimals[i] = customAnimals;
             }
             groupAnimalsField.SetValue( CitizenManager.instance, newGroupAnimals);
