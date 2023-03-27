@@ -19,8 +19,8 @@ namespace NoVanillaCitizens
             var groupCitizensField =
                 typeof(CitizenManager).GetField("m_groupCitizens", BindingFlags.Instance | BindingFlags.NonPublic);
             var groupCitizens = (FastList<ushort>[]) groupCitizensField.GetValue(CitizenManager.instance);
-            var newGroupCitizens = new FastList<ushort>[840];
-            for (var i = 0; i < 840; i++)
+            var newGroupCitizens = new FastList<ushort>[groupCitizens.Length];
+            for (var i = 0; i < newGroupCitizens.Length; i++)
             {
                 if (groupCitizens[i] is null || groupCitizens[i].m_size == 0)
                 {
