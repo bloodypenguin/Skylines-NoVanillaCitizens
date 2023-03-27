@@ -30,7 +30,7 @@ namespace NoVanillaCitizens
 
             try
             {
-                UnityEngine.Debug.Log("No Vanilla Citizens: filtering citizens...");
+                UnityEngine.Debug.Log("No Vanilla Citizens: filtering animals...");
                 FilterAnimals();
             }
             catch (Exception e)
